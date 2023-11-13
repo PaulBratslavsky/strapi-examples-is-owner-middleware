@@ -11,6 +11,10 @@ module.exports = (config, { strapi }) => {
     const user = ctx.state.user;
     const userId = user.id;
 
+    // This query allows user to populate the fields and relations
+    // if you need additional security you would update the query accordingly
+    // and remove ...ctx.query
+    
     ctx.query = {
       ...ctx.query,
       filters: {

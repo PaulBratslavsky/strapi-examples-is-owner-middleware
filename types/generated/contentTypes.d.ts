@@ -371,7 +371,7 @@ export interface ApiNoteNote extends Schema.CollectionType {
     description: '';
   };
   options: {
-    draftAndPublish: true;
+    draftAndPublish: false;
   };
   attributes: {
     title: Attribute.String;
@@ -384,7 +384,6 @@ export interface ApiNoteNote extends Schema.CollectionType {
     isPublic: Attribute.Boolean & Attribute.DefaultTo<false>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
-    publishedAt: Attribute.DateTime;
     createdBy: Attribute.Relation<'api::note.note', 'oneToOne', 'admin::user'> &
       Attribute.Private;
     updatedBy: Attribute.Relation<'api::note.note', 'oneToOne', 'admin::user'> &
